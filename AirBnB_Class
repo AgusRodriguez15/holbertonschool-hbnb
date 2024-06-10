@@ -1,0 +1,60 @@
+#!/usr/bin/python3
+
+"""create all the clses for the AirBnB"""
+
+
+class KeyEntities:
+    def __init__(self, id: int, create_at: str, update_at: str):
+        self.id = id
+        self.create_at = create_at
+        self.update_at = update_at
+
+class Place(KeyEntities):
+    def __init__(self, id: int, create_at: str, update_at: str, amenities: list, host: str, city: str, reviews: list):
+        super().__init__(id, create_at, update_at)
+        self.amenities = amenities
+        self.host = host
+        self.city = city
+        self.reviews = reviews
+
+class Reviews(KeyEntities):
+    def __init__(self, id: int, create_at: str, update_at: str, place_id: int, user_id: int, rating: int, comment: str):
+        super().__init__(id, create_at, update_at)
+        self.place_id = place_id
+        self.user_id = user_id
+        self.rating = rating
+        self.comment = comment
+
+class Amenities:
+    def __init__(self, id: int, create_at: str, update_at: str, name: str, address: str, description: str, num_rooms: int, num_bathrooms: int, price_night: float, max_guests: int):
+        self.id = id
+        self.create_at = create_at
+        self.update_at = update_at
+        self.name = name
+        self.address = address
+        self.description = description
+        self.num_rooms = num_rooms
+        self.num_bathrooms = num_bathrooms
+        self.price_night = price_night
+        self.max_guests = max_guests
+
+class City(KeyEntities):
+    def __init__(self, id: int, create_at: str, update_at: str, longitude: float, latitude: float, name: str, country: str):
+        super().__init__(id, create_at, update_at)
+        self.longitude = longitude
+        self.latitude = latitude
+        self.name = name
+        self.country = country
+
+class Users(KeyEntities):
+    def __init__(self, id: int, create_at: str, update_at: str, email: str, password: str, first_name: str, last_name: str):
+        super().__init__(id, create_at, update_at)
+        self.email = email
+        self.password = password
+        self.first_name = first_name
+        self.last_name = last_name
+
+class Country(City):
+    def __init__(self, id: int, create_at: str, update_at: str, name: str):
+        super().__init__(id, create_at, update_at)
+        self.name = name
