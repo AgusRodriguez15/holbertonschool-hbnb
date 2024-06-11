@@ -25,8 +25,9 @@ class Reviews(KeyEntities):
         self.rating = rating
         self.comment = comment
 
-class Amenities:
+class Amenities(KeyEntities):
     def __init__(self, id: int, create_at: str, update_at: str, name: str, address: str, description: str, num_rooms: int, num_bathrooms: int, price_night: float, max_guests: int):
+        
         self.id = id
         self.create_at = create_at
         self.update_at = update_at
