@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-from Class_City import City
+from City import city
 
-class Country(City):
-    """This class represents a Country."""
+class Country(city):
     def __init__(self, id: int, create_at: str, update_at: str, name: str):
         super().__init__(id, create_at, update_at)
         self.name = name
+country = Country()
